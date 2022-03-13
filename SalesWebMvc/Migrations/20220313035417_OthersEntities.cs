@@ -2,26 +2,21 @@
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace SalesWebMvc.Migrations
-{
-    public partial class OthersEntities : Migration
-    {
-        protected override void Up(MigrationBuilder migrationBuilder)
-        {
+namespace SalesWebMvc.Migrations {
+    public partial class OtherEntities : Migration {
+        protected override void Up(MigrationBuilder migrationBuilder) {
             migrationBuilder.CreateTable(
                 name: "Seller",
-                columns: table => new
-                {
+                columns: table => new {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<int>(nullable: false),
+                    Name = table.Column<string>(nullable: true),
                     Email = table.Column<string>(nullable: true),
                     BirthDate = table.Column<DateTime>(nullable: false),
                     BaseSalary = table.Column<double>(nullable: false),
                     DepartmentId = table.Column<int>(nullable: true)
                 },
-                constraints: table =>
-                {
+                constraints: table => {
                     table.PrimaryKey("PK_Seller", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Seller_Department_DepartmentId",
@@ -33,8 +28,7 @@ namespace SalesWebMvc.Migrations
 
             migrationBuilder.CreateTable(
                 name: "SalesRecord",
-                columns: table => new
-                {
+                columns: table => new {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Date = table.Column<DateTime>(nullable: false),
@@ -42,8 +36,7 @@ namespace SalesWebMvc.Migrations
                     Status = table.Column<int>(nullable: false),
                     SellerId = table.Column<int>(nullable: true)
                 },
-                constraints: table =>
-                {
+                constraints: table => {
                     table.PrimaryKey("PK_SalesRecord", x => x.Id);
                     table.ForeignKey(
                         name: "FK_SalesRecord_Seller_SellerId",
@@ -64,8 +57,7 @@ namespace SalesWebMvc.Migrations
                 column: "DepartmentId");
         }
 
-        protected override void Down(MigrationBuilder migrationBuilder)
-        {
+        protected override void Down(MigrationBuilder migrationBuilder) {
             migrationBuilder.DropTable(
                 name: "SalesRecord");
 
