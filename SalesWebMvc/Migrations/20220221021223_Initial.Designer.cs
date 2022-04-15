@@ -5,30 +5,27 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SalesWebMvc.Models;
 
-namespace SalesWebMvc.Migrations
-{
+namespace SalesWebMvc.Migrations {
     [DbContext(typeof(SalesWebMvcContext))]
     [Migration("20220221021223_Initial")]
-    partial class Initial
-    {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
-        {
+    partial class Initial {
+        protected override void BuildTargetModel(ModelBuilder modelBuilder) {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.1.14-servicing-32113")
+                .HasAnnotation("ProductVersion", "2.1.1-rtm-30846")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             modelBuilder.Entity("SalesWebMvc.Models.Department", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
+            {
+                b.Property<int>("Id")
+                    .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Name");
+                b.Property<string>("Name");
 
-                    b.HasKey("Id");
+                b.HasKey("Id");
 
-                    b.ToTable("Department");
-                });
+                b.ToTable("Department");
+            });
 #pragma warning restore 612, 618
         }
     }

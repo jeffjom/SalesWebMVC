@@ -8,7 +8,7 @@ using SalesWebMvc.Models;
 
 namespace SalesWebMvc.Migrations {
     [DbContext(typeof(SalesWebMvcContext))]
-    [Migration("20180825131454_OtherEntities")]
+    [Migration("20220313035417_OtherEntities")]
     partial class OtherEntities {
         protected override void BuildTargetModel(ModelBuilder modelBuilder) {
 #pragma warning disable 612, 618
